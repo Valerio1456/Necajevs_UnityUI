@@ -16,16 +16,18 @@ public class ImageScript : MonoBehaviour
 
     public void Rost()
     {
-        float pasreizejaVertiba = slaideris.GetComponent<Slider>().value;
+        float pasreizejaVertiba = slaideris.value;
         float garums = pasreizejaVertiba * 2;
-        mainigaisAttels.transform.localScale = new Vector3(1F * garums, 1F * garums, 1);
-
+        Vector3 currentScale = mainigaisAttels.transform.localScale;
+        mainigaisAttels.transform.localScale = new Vector3(currentScale.x, garums, currentScale.z);
     }
+
     public void shirina()
     {
-        float pasreizejaVertiba = slaideris2.GetComponent<Slider>().value;
+        float pasreizejaVertiba = slaideris2.value;
         float platums = pasreizejaVertiba * 2;
-        mainigaisAttels.transform.localScale = new Vector3(1F * platums, 1, 1);
+        Vector3 currentScale = mainigaisAttels.transform.localScale;
+        mainigaisAttels.transform.localScale = new Vector3(platums, currentScale.y, currentScale.z);
     }
 
     public void atteluM(int sk)
